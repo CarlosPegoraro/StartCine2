@@ -1,0 +1,130 @@
+body {
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    text-align: right;
+    background: linear-gradient(to right, rgb(46, 42, 42), rgb(14, 135, 172));
+    margin-right: 20%;
+    padding-right: 3%;
+    background-size: cover!important;
+    background: url('../img/starWars/starwarsBackground.jpg');
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+
+
+.sideBar {
+    width: 10%;
+    height: 100%;
+    background-color: rgba(112, 112, 112, 0.507);
+    padding-right: 3%;
+    margin-left: 8%;
+    float: left;
+}
+
+.sideBarIcon {
+    background-color: rgb(63, 63, 63);
+    width: 70px;
+    padding: 10%;
+    height: 70px;
+    border-radius: 20px;
+}
+
+
+
+
+.wrapper {
+    width: 67%;
+    height: 33%;
+    display:inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    float: right;
+    position: relative;
+    margin-right: 4%;
+}
+
+.images {
+    width: 20%;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 10px;
+    object-position: center;
+    object-fit: cover;
+    transition: transform 1s ease-in-out;
+    margin: 5px 10px;
+}
+.images > img {
+    width: 100%;
+    height: 100%;
+}
+.images > img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+.gallery {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0,0.6);
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: transform 1s ease-in-out;
+}
+.gallery-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-inner > img{
+    width: 80%;
+}
+.control-prev {
+    position: fixed;
+    left: 50px;
+   
+}
+#close {
+    color: rgb(184, 149, 149);
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+.control-next {
+    position: fixed;
+    right:50px;
+}
+.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+
+
+
+
+.divSpace {
+    height: 50px;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.Space {
+    height: 2%;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.bigSpace {
+    height: 35%;
+    background-color: rgba(240, 248, 255, 0);
+}
