@@ -37,7 +37,7 @@
         foreach($search as $check)
         {
             $emailSearch = $check['email'];
-            $emailLogin = "$email.html";
+            $emailLogin = "$email";
             if($emailSearch == $email)
             {
                 //If not valid
@@ -47,7 +47,7 @@
             else
             {
                 //if valid
-                header("Location: ../users/$emailLogin");
+                header("Location: ../users/$emailLogin/home.html");
                 die();
             }
         }

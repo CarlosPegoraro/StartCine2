@@ -43,10 +43,16 @@
                 echo "<p>Can't save the data!</p>";
             } else
             {
-                //Create the file emai.html using the function fopen, fwrite and fclose
-                $tittle = "StartCine - $email"; 
+                //Create the folder using the function is_dir and mkdir
                 
-                $fpHtml = fopen("../users/$email.html", "w+");
+                $path = "../users/$email";
+                if (!is_dir($path)) {
+                    mkdir($path, 0777, true);
+                }
+                
+
+
+                $fpHtml = fopen("../users/$email/home.html", "w+");
 
                 fwrite($fpHtml, "
                     $modelHtml
@@ -54,17 +60,24 @@
 
                 fclose($fpHtml);
 
-                $fpCss = fopen("../users/css/$email.css", "w+");
+                $fpPhp = fopen("../users/$email/styles.php", "w+");
 
-                fwrite($fpCss, "
-                    $modelCss                
+                fwrite($fpPhp, "
+                    $modelPhp
                 ");
 
-                fclose($fpCss);
+                fclose($fpPhp);
+
+                $fpChange = fopen("../users/$email/change.html", "w+");
+
+                fwrite($fpChange,"
+                    $modelChange          
+                ");
+
+                fclose($fpChange);
 
                 header('Location: ../login.php');
                 die();
             }
         }
     }
-?>
