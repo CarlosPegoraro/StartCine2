@@ -44,15 +44,23 @@
             } else
             {
                 //Create the file emai.html using the function fopen, fwrite and fclose
-                $tittle   = "StartCine - $email"; 
+                $tittle = "StartCine - $email"; 
+                
+                $fpHtml = fopen("../users/$email.html", "w+");
 
-                $fp = fopen("../users/$email.html", "w+");
-
-                fwrite($fp, "
-                    $model
+                fwrite($fpHtml, "
+                    $modelHtml
                 ");
 
-                fclose($fp);
+                fclose($fpHtml);
+
+                $fpCss = fopen("../users/css/$email.css", "w+");
+
+                fwrite($fpCss, "
+                    $modelCss                
+                ");
+
+                fclose($fpCss);
 
                 header('Location: ../login.php');
                 die();
