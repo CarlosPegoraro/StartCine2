@@ -17,7 +17,7 @@ body {
     width: 100%;
     text-align: right;
     background: linear-gradient(to right, rgb(46, 42, 42), rgb(14, 135, 172));
-    background-image: url('img/background2.png');
+    background-image: url('img/home/background2.png');
     margin-right: 20%;
     padding-right: 2%;
 }
