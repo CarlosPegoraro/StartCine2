@@ -40,27 +40,20 @@
 
             if($registered)
             {
-                echo "<p>Não foi possivel registrar!</p>";
+                echo "<p>Can't save the data!</p>";
             } else
             {
-                $titulo   = "StartCine - $email"; // normalmente vai pegar de DB ou formulario
-                $conteudo = $body;
+                //Create the file emai.html using the function fopen, fwrite and fclose
+                $tittle   = "StartCine - $email"; 
 
-                // Montamos nosso HTML no PHP, da forma que quisermos
-                // \t é o tab, \n a quebra de linha
-                $html  = "<html>\n";
-                $html .= "\t<head>\n" . htmlentities( $head );
-                $html .= "\t\t<title>".htmlentities( $titulo )."</title>\n";
-                $html .= "\t</head>\n";
-                $html .= "\t<body>\n";
-                $html .= "\t\t<div>".htmlentities( $conteudo )."</div>\n";
-                $html .= "\t</body>\n";
-                $html .= "</html>\n";
+                $fp = fopen("../users/$email.html", "w+");
 
-                //... e vai montando o arquivo com variáveis etc
-                // e depois salva
+                fwrite($fp, "
+                    $model
+                ");
 
-                file_put_contents("../users/$email.html", $html);
+                fclose($fp);
+
                 header('Location: ../login.php');
                 die();
             }
