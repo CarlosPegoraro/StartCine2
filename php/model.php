@@ -18,16 +18,16 @@
          <!--sidebar-->
         <div class='sideBar'>
             <!--Hyperlink for search-->
-            <a href='php/search.html'>
-                <img class='sideBarIcon' src='./img/iconSearch.png'>
+            <a href='../search.html'>
+                <img class='sideBarIcon' src='../../img/iconSearch.png'>
             </a>
             <div class='divSpace'></div>
             <!--Hyperlink for strings-->
-            <img class='sideBarIcon' src='./img/inconConfig.png'>
+                <img class='sideBarIcon' src='../../img/inconConfig.png'>
             <div class='divSpace'></div>
             <!--Hyperlink for user-->
             <a href='php/login.php'>
-                <img class='sideBarIcon' src='../img/iconUser.png'>
+                <img class='sideBarIcon' src='../../img/iconUser.png'>
             </a>
             <div class='divSpace'></div>   
         </div><!--Margin top--><div class='Space'></div><!--Carrosel--><div id='carrosel'>
