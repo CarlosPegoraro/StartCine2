@@ -1,93 +1,15 @@
 <?php
 
-    if($_POST) {
-        $emailModel = $_POST['email'];
-
-    $modelHtml = "
-    <!DOCTYPE html>
-    <html lang='en'>
-        <head>
-        <meta charset='UTF-8'>
-        <title> StartCine - " . $emailModel . " </title>
-        <!-- CSS -->
-        <link rel='stylesheet' href='styles.php'>
-        <link rel='icon' type='imagem/png' href='../../../img/iconCine.png' />
-    </head>
-    <body>
-    
-         <!--sidebar-->
-        <div class='sideBar'>
-        <!--Hyperlink for search-->
-        <a href='../../php/search.html'>
-            <img class='sideBarIcon' src='../../img/iconSearch.png'>
-        </a>
-        <div class='divSpace'></div>
-        <!--Hyperlink for strings-->
-        <a href='change.html'>
-            <img class='sideBarIcon' src='../../img/inconConfig.png'>
-        </a>
-        <div class='divSpace'></div>
-        <!--Hyperlink for user-->
-        <a href='../../php/login.php'>
-            <img class='sideBarIcon' src='../../img/iconUser.png'>
-        </a>
-        <div class='divSpace'></div>   
-            <div class='divSpace'></div>   
-        <div class='divSpace'></div>   
-    </div>
-
-    <!--wrapper-->
-    <div class='wrapper'>
-        <div class='images'>
-            <img src='../../img/home/cartazIronMan.jpg' alt=''><p>ironmain</p>
-        </div>
-        <div class='images'>
-            <img src='../../img/home/cartazJusticeLeague.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../img/home/cartazMatrix.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../img/home/cartazRambo.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../img/home/cartazStanLee.webp' alt=''>
-        </div>
-    </div>
-
-    <!--gallery-->
-    <div class='gallery'>
-        <i class='far fa-times-circle' id='close'></i>
-        
-        <div class='gallery-inner'>
-            <img src='../../img/home/doctor.jpg' alt=''>
-        </div>
-        <div class='control-prev'>
-            <i class='fas fa-arrow-circle-left'></i>
-        </div>
-        <div class='control-next'>
-            <i class='fas fa-arrow-circle-right'></i>
-        </div>
-    </div>
-
-    <!--script js-->
-    <script src='script.js'></script>
-    </body>
-</html>";
-
-    $modelPhp = "
-
-    <?php
-
 
     require_once '../../model.php';
 
-    header('Content-type: text/css');
+    header("Content-type: text/css");
 
-
-        $sideColor = '#fe3174';
-        $backColor = '#045071';
+    if($_POST) {
+        $sideColor = $_POST['sideColor'];
+        $backColor = $_POST['backColor'];
     }
+
     ?>
 
     :root {
@@ -267,26 +189,5 @@
         height: 100%;
         background-color: rgba(240, 248, 255, 0);
     }
-        ";
-
-    }
-
-    $modelChange = "
-        <!DOCTYPE html>
-        <html lang='en'>
-        <head>
-            <meta charset='UTF-8'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Document</title>
-        </head>
-        <body>
-            <form method='post' action='styles.php'>
-                change you background color <input type='color' name='backgroundColor'>
-                change you sideBar color <input type='color' name='sideBarColor'>
-                <input type='submit' value='Change'>
-        </body>
-        </html>
-    ";
-
-?>
+        
+                
