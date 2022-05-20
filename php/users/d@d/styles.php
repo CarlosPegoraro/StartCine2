@@ -1,89 +1,16 @@
-<?php
 
-    if($_POST) {
-        $emailModel = $_POST['email'];
-
-    $modelHtml = "
-    <!DOCTYPE html>
-    <html lang='en'>
-        <head>
-        <meta charset='UTF-8'>
-        <title> StartCine - " . $emailModel . " </title>
-        <!-- CSS -->
-        <link rel='stylesheet' href='styles.php'>
-        <link rel='icon' type='imagem/png' href='../../../img/iconCine.png' />
-    </head>
-    <body>
-    
-         <!--sidebar-->
-        <div class='sideBar'>
-        <!--Hyperlink for search-->
-        <a href='../../search.html'>
-            <img class='sideBarIcon' src='../../../img/iconSearch.png'>
-        </a>
-        <div class='divSpace'></div>
-        <!--Hyperlink for strings-->
-        <a href='change.html'>
-            <img class='sideBarIcon' src='../../../img/inconConfig.png'>
-        </a>
-        <div class='divSpace'></div>
-        <!--Hyperlink for user-->
-        <a href='../../login.php'>
-            <img class='sideBarIcon' src='../../../img/iconUser.png'>
-        </a>
-        <div class='divSpace'></div>   
-            <div class='divSpace'></div>   
-        <div class='divSpace'></div>   
-    </div>
-
-    <!--wrapper-->
-    <div class='wrapper'>
-        <div class='images'>
-            <img src='../../../img/home/cartazIronMan.jpg' alt=''><p>ironmain</p>
-        </div>
-        <div class='images'>
-            <img src='../../../img/home/cartazJusticeLeague.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../../img/home/cartazMatrix.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../../img/home/cartazRambo.jpg' alt=''>
-        </div>
-        <div class='images'>
-            <img src='../../../img/home/cartazStanLee.webp' alt=''>
-        </div>
-    </div>
-
-    <!--gallery-->
-    <div class='gallery'>
-        <i class='far fa-times-circle' id='close'></i>
-        
-        <div class='gallery-inner'>
-            <img src='../../img/home/doctor.jpg' alt=''>
-        </div>
-        <div class='control-prev'>
-            <i class='fas fa-arrow-circle-left'></i>
-        </div>
-        <div class='control-next'>
-            <i class='fas fa-arrow-circle-right'></i>
-        </div>
-    </div>
-
-    <!--script js-->
-    <script src='script.js'></script>
-    </body>
-</html>";
-
-    $modelPhp = "
+                    
 
     <?php
 
-    header(\"Content-type: text/css\");
+
+    require_once '../../model.php';
+
+    header("Content-type: text/css");
 
 
-        \$sideColor = '#fe3174';
-        \$backColor = '#045071';
+        $sideColor = '#fe3174';
+        $backColor = '#045071';
     
     ?>
 
@@ -105,7 +32,7 @@
         height: 100vh;
         width: 100%;
         text-align: right;
-        background: linear-gradient(to right, rgb(46, 42, 42), <?php echo \$backColor; ?>);
+        background: linear-gradient(to right, rgb(46, 42, 42), <?php echo $backColor; ?>);
         margin-right: 20%;
         padding-right: 2%;
     }
@@ -116,7 +43,7 @@
     .sideBar {
         width: 10%;
         height: 100%;
-        background-color: <?php echo \$sideColor; ?>;
+        background-color: <?php echo $sideColor; ?>;
         margin-right: 3%;
         padding-top: 18%;
         padding-right: 2.5%;
@@ -264,26 +191,5 @@
         height: 100%;
         background-color: rgba(240, 248, 255, 0);
     }
-        ";
-
-    }
-
-    $modelChange = "
-        <!DOCTYPE html>
-        <html lang='en'>
-        <head>
-            <meta charset='UTF-8'>
-            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-            <title>Document</title>
-        </head>
-        <body>
-            <form method='post' action='styles.php'>
-                change you background color <input type='color' name='backColor'>
-                change you sideBar color <input type='color' name='sideColor'>
-                <input type='submit' value='Change'>
-        </body>
-        </html>
-    ";
-
-?>
+        
+                
