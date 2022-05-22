@@ -1,8 +1,13 @@
-<?php
 
-    require_once 'change.php';
+                    
+
+    <?php
 
     header("Content-type: text/css");
+
+
+        $sideColor = '#fe3174';
+        $backColor = '#045071';
     
     ?>
 
@@ -24,7 +29,7 @@
         height: 100vh;
         width: 100%;
         text-align: right;
-        background: linear-gradient(to right, rgb(46, 42, 42), <?php echo $_POST['backColor']; ?>);
+        background: linear-gradient(to right, rgb(46, 42, 42), <?php echo $backColor; ?>);
         margin-right: 20%;
         padding-right: 2%;
     }
@@ -35,7 +40,7 @@
     .sideBar {
         width: 10%;
         height: 100%;
-        background-color: <?php echo $_POST['sideColor']; ?>;
+        background-color: <?php echo $sideColor; ?>;
         margin-right: 3%;
         padding-top: 18%;
         padding-right: 2.5%;
