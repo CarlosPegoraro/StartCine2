@@ -17,9 +17,12 @@
         $email = addslashes($_POST['email']);
         $pass = addslashes($_POST['pass']);
 
+        //subtrate the @gmail.com of $email
+        $emailWithout = substr($email, 0, -10);
+
         //Create the var using the class Login
-        $Login = new Login($email, $pass);
-        $email = $Login->email();
+        $Login = new Login($emailWithout, $pass);
+        $emailWithout = $Login->email();
         $password = $Login->pass();
 
         //The sql code from select datas
@@ -27,7 +30,7 @@
 
         //Function for show the datas from data base
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(":email", $email);
+        $stmt->bindValue(":email", $emailWithout);
         $stmt->bindValue(":pass", $password);
         $stmt->execute();  
         
@@ -37,8 +40,8 @@
         foreach($search as $check)
         {
             $emailSearch = $check['email'];
-            $emailLogin = "$email";
-            if($emailSearch == $email)
+            $emailLogin = "$emailWithout";
+            if($emailSearch == $emailWithout)
             {
                 //If not valid
                 echo "<p>Error</p>";
