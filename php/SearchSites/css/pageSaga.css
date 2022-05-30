@@ -23,31 +23,43 @@ body {
     background-attachment: fixed;
     background-position: center;
 }
+#backStar {
+    height: 2000px;
+    width: 100%;
+    background-size: cover!important;
+    background: url('../../../img/starWars/starwarsBackground.png');
+    background-attachment: fixed;
+    background-position: center;
+}
 /*MAIN*/
 main {
     margin: auto;
-    width: 1366px;
-    height: 768px;
+    width: 100%;
+    height: 100%;
 }
 /*HEADER*/
 header {
-    height: 50px;
-    padding: 10px 0px 0px 50px;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
     z-index: 1;
+    background-color: #2e2a2a54;
+    border-radius: 20px
 }
 /*P*/
-p {
+header p {
     font-weight: bold;
     font-size: 32px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #3f3f3f;
+    color: #dfdfdf;
 }
 /*ASIDE*/
 aside {
     width: 200px;
     height: 100%;
     margin: 0px 0px 0px 3%;
-    padding: 12% 0px 0px 0px;
+    padding: 20% 0px;
     z-index: 10;
     float: left;
     position: fixed;
@@ -61,17 +73,19 @@ aside {
     padding: 10px;
     border-radius: 20px;
 }
-
+/*SCROLL BAR*/
+::-webkit-scrollbar {
+    display: none;
+}
 /*CONTENT*/
 #content {
     width: 1000px;
     height: 600px;
-    margin: auto;
+    margin: 8% auto;
     overflow-y: scroll;
 }
 /*WRAPPER*/
 article {
-    padding-top: 40px;
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: center;
